@@ -1,0 +1,729 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://db.onlinewebfonts.com/c/0b6986b36b7d81188f996e58f2ec0643?family=Sharp+Grotesk+DB+Cyr+Medium+22");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*--------------------*/
+@font-face {
+  font-family: 'Fabrica';
+  src: url("../fonts/Fabrica.eot");
+  src: local("☺"), url("../fonts/Fabrica.woff") format("woff"), url("../fonts/Fabrica.ttf") format("truetype"), url("../fonts/Fabrica.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.wrapper {
+  height: 100%;
+  position: relative;
+  font-family: "Fabrica"; }
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 30px;
+  z-index: 2; }
+
+.header_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 30px 0 0; }
+
+.header__logo {
+  position: absolute;
+  left: 30px;
+  width: 215px;
+  height: 30px;
+  z-index: 1; }
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+.menu__list li {
+  padding: 0 0 0 50px; }
+
+@media (max-width: 950px) {
+  .menu__list li {
+    padding: 0 0 0 20px; } }
+
+.menu__link {
+  color: #fff; }
+
+@media (max-width: 800px) {
+  body.lock {
+    overflow: hidden; }
+  .printing-body {
+    overflow: hidden; }
+  .header__logo {
+    width: 170px;
+    height: 28px; }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 15; }
+  .header__burger span {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 9px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+  .header__burger:before,
+  .header__burger:after {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+  .header__burger:before {
+    top: 0; }
+  .header__burger:after {
+    bottom: 0; }
+  .header__burger.active span {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0); }
+  .header__burger.active:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 9px; }
+  .header__burger.active:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    bottom: 9px; }
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    background-color: grey;
+    padding: 100px 10px 20px 10px; }
+  .header__menu.active {
+    top: 0; }
+  .menu__list {
+    display: block; }
+  .menu__list li {
+    margin: 0 0 20px 0; }
+  .menu__link {
+    font-size: 24px; } }
+
+.container {
+  max-width: 1267px;
+  margin: 0 auto;
+  width: 100%; }
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden; }
+
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden; }
+
+/* Лента слайдов */
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+
+.slider__item img {
+  max-width: 100%; }
+
+.slider2 {
+  position: relative;
+  padding: 60px; }
+
+.slider2 .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin: -90px 0 0 0px;
+  z-index: 10;
+  font-size: 0;
+  width: 50px;
+  height: 50px; }
+
+.slider2 .slick-arrow.slick-prev {
+  left: 0;
+  background: url("../../img/slider2/back.svg") 0 0/100% no-repeat; }
+
+.slider2 .slick-arrow.slick-next {
+  right: 0;
+  background: url("../../img/slider2/next.svg") 0 0/100% no-repeat; }
+
+.slider2__item {
+  padding: 0 15px; }
+  .slider2__item img {
+    height: auto;
+    width: 100%;
+    vertical-align: top; }
+
+.slider2__item__fon {
+  position: relative;
+  text-align: center;
+  margin: 0px auto 0 auto;
+  width: 80%;
+  padding: 10% 3% 5%;
+  border-bottom: 5px solid #dad8da; }
+  .slider2__item__fon h4 {
+    font-family: "Sharp Grotesk DB Cyr Medium 22";
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    color: #000; }
+  .slider2__item__fon h4:hover {
+    cursor: pointer;
+    color: #2eaaeb; }
+  .slider2__item__fon p {
+    line-height: 1.534rem;
+    font-size: 14px;
+    margin: 0 0 20px 0; }
+
+.printing-body {
+  padding: 0 0 0 17%;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  z-index: 1;
+  color: #fff;
+  line-height: 1.3; }
+
+.printing-body__title {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  text-transform: uppercase;
+  font-size: 45px;
+  margin: 0 0 25px;
+  font-weight: 900;
+  max-width: 311px; }
+
+.printing-body__text {
+  border-left: 3px solid #ff4b5a;
+  padding-left: 30px;
+  margin-bottom: 35px;
+  font-weight: 700;
+  font-size: 1.27rem; }
+
+.printing-body__buttons {
+  padding: 0 0 0 30px;
+  width: 230px; }
+
+.printing-body__buttons__red {
+  background-color: #ff4b5a;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 1.26rem;
+  line-height: 2.6rem;
+  text-align: center;
+  font-size: .8rem;
+  display: inline-block;
+  width: 230px;
+  letter-spacing: .5px;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(76, 18, 31, 0.35);
+  box-shadow: 0 2px 3px 0 rgba(76, 18, 31, 0.35); }
+  .printing-body__buttons__red:hover {
+    background-color: #fd3c51; }
+
+.printing-body__buttons__clear {
+  color: #fff;
+  margin: 20px 0;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  border-radius: 1.26rem;
+  line-height: 2.6rem;
+  text-align: center;
+  font-size: .8rem;
+  display: inline-block;
+  width: 230px;
+  letter-spacing: .5px; }
+
+@media (max-width: 1267px) {
+  .printing-body {
+    top: 22%; }
+  .printing-body__title {
+    font-size: 30px;
+    margin: 0 0 15px; }
+  .printing-body__text {
+    margin-bottom: 25px;
+    font-size: 1.1rem; } }
+
+@media (max-width: 800px) {
+  .printing-body {
+    top: 13%; }
+  .printing-body__title {
+    font-size: 25px;
+    margin: 0 0 10px;
+    max-width: 400px; }
+  .printing-body__text {
+    margin-bottom: 20px;
+    font-size: 1rem; } }
+
+.cutting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px 50px 0 50px; }
+
+.cutting__column {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  padding-right: 20px; }
+
+.cutting__column__row {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  position: relative;
+  color: #fff;
+  text-align: center; }
+
+.cutting__column__row__image {
+  position: absolute;
+  height: 400px;
+  width: 100%; }
+
+.cutting__column__row__logo {
+  position: absolute;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 150%);
+  -ms-transform: translate(-50%, 150%);
+  transform: translate(-50%, 150%);
+  margin-bottom: 15px; }
+
+.cutting__column__row__text {
+  position: relative;
+  padding: 120px 0 0 0;
+  margin-bottom: 15px; }
+
+.cutting__column__row__btn {
+  position: relative;
+  color: #2eaaeb;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: underline; }
+
+.cutting-body {
+  margin: 20px; }
+
+.cutting-body-content {
+  min-width: 350px;
+  padding: 12% 0 12% 4%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.cutting-body__title {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  padding-right: 40px;
+  font-size: 32px;
+  margin: 0 0 18px;
+  font-weight: 600;
+  line-height: 1.3; }
+
+.cutting-body__text {
+  border-left: 3px solid #ff4b5a;
+  padding: 0 33% 0 30px;
+  margin: 0 0 1.4rem;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5; }
+
+.cutting-body-button {
+  text-decoration: underline;
+  font-size: 12px;
+  margin: 0 0 0 25px;
+  cursor: pointer;
+  color: #2eaaeb; }
+
+@media (max-width: 1267px) {
+  .cutting-body__title {
+    padding-right: 20px; }
+  .cutting-body__text {
+    padding: 0 20% 0 30px;
+    margin: 0 0 1.4rem; } }
+
+@media (max-width: 950px) {
+  .cutting__column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding-right: 0px; }
+    .cutting__column:first-child {
+      display: none; }
+  .cutting {
+    padding: 0; }
+  .cutting-body-content {
+    padding: 30px; } }
+
+.companys {
+  text-align: center;
+  margin: 90px 0px; }
+
+.companys-text {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  font-size: 2.13rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 18px; }
+
+.companys-logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .companys-logos img {
+    height: 125px;
+    max-width: 125px;
+    margin: 20px; }
+
+@media (max-width: 950px) {
+  .companys {
+    margin: 30px 0px; } }
+
+.offers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.offers_rev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .offers_rev .offers__column {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
+  .offers_rev .offers__column_b {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2; }
+
+.offers__column {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%; }
+
+.offers__column_b {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%; }
+
+.offers__image {
+  height: 100%;
+  min-width: 400px; }
+
+.offers-body {
+  padding: 15%;
+  background-color: #faf9f9; }
+
+.offers-body-content {
+  min-width: 350px;
+  padding: 12% 0 12% 4%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.offers-body__title {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  padding-right: 100px;
+  font-size: 32px;
+  margin: 0 0 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1.2rem; }
+
+.offers-body__text {
+  border-left: 2px solid #ff4b5a;
+  padding: 0 0 0 25px;
+  margin: 0 0 1.4rem;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5rem; }
+
+.offers-body-button {
+  text-decoration: underline;
+  font-size: 12px;
+  margin: 0 0 0 25px;
+  cursor: pointer;
+  color: #2eaaeb; }
+
+@media (max-width: 950px) {
+  .offers-body-content {
+    min-width: auto; } }
+
+@media (max-width: 767.98px) {
+  .offers, .offers_rev {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .offers__column, .offers__column_b {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%; }
+  .offers-body {
+    padding: 20px; }
+  .offers-body-content {
+    padding: 20px 0 20px 4%; } }
+
+.stats {
+  padding: 100px 2.109%; }
+  .stats p {
+    margin: 0 0 1.4rem; }
+
+.stats-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.stats-row-number {
+  font-size: 40px; }
+
+.stats-line {
+  width: 2px;
+  height: 74px;
+  -webkit-transform: rotate(-345deg);
+  -ms-transform: rotate(-345deg);
+  transform: rotate(-345deg);
+  border: solid 1px #ff4b5a;
+  margin: 0 5.5%; }
+
+@media (max-width: 950px) {
+  .stats {
+    padding: 50px 2%; }
+  .stats-row-number {
+    font-size: 30px; }
+  .stats-line {
+    margin: 0 2.5%; } }
+
+@media (max-width: 767.98px) {
+  .stats {
+    padding: 20px 2%; }
+  .stats-row-number {
+    font-size: 20px; }
+  .stats-line {
+    margin: 0 2%; } }
+
+.ready {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #faf9f9;
+  padding: 5% 0; }
+  .ready .companys-text {
+    margin: 0 20px 0 0; }
+
+.ready-text {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 18px; }
+
+.ready__buttons__red {
+  background-color: #ff4b5a;
+  text-transform: uppercase;
+  border-radius: 1.26rem;
+  line-height: 2.6rem;
+  text-align: center;
+  font-size: .8rem;
+  height: 2.6rem;
+  color: #fff;
+  padding: 0px 30px 0px 30px;
+  letter-spacing: .5px;
+  margin: 20px 0 0 0; }
+  .ready__buttons__red:hover {
+    background-color: #fd3c51; }
+
+@media (max-width: 767.98px) {
+  .ready {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
+
+.footer {
+  background-color: #1e2740;
+  color: #fff; }
+
+.footer-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 20px 0; }
+
+.footer-body-text {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 18px; }
+
+.footer-body__buttons__red {
+  background-color: #ff4b5a;
+  text-transform: uppercase;
+  border-radius: 1.26rem;
+  line-height: 2.6rem;
+  text-align: center;
+  font-size: .8rem;
+  height: 2.6rem;
+  color: #fff;
+  padding: 0px 30px 0px 30px;
+  letter-spacing: .5px;
+  margin: 20px 0 0 0; }
+  .footer-body__buttons__red:hover {
+    background-color: #fd3c51; }
+
+.footer-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  padding: 20px 15%;
+  -webkit-box-align: flex-center;
+  -ms-flex-align: flex-center;
+  align-items: flex-center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-top: 1px solid #38444a; }
+
+.footer-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.footer-column__title {
+  font-family: "Sharp Grotesk DB Cyr Medium 22";
+  font-size: 18px;
+  margin: 0 0 18px 0; }
+
+.footer-column__links {
+  font-size: 15px;
+  padding: 10px 0; }
+  .footer-column__links a {
+    color: #dad8da;
+    line-height: 1.3;
+    letter-spacing: 1px; }
+  .footer-column__links a:hover {
+    color: #fff; }
+
+@media (max-width: 767.98px) {
+  .footer-body {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
